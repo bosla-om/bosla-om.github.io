@@ -12,34 +12,29 @@
 <meta property="og:description" content="اعرف وين يوصلك معدلك: محاكي القبول الموحد ودليل الطالب 2026/2027.">
 <meta property="og:url" content="https://bosla-om.github.io/">
 <meta property="og:image" content="https://bosla-om.github.io/share.jpg">
+<noscript><meta http-equiv="refresh" content="0;url=https://script.google.com/macros/s/AKfycbyU4tBXEdUEviiN3N6r9eC2FSRwk33ctH2-3LMoW5fvs22b-DwDqstRj7ziIVeREAgpGA/exec"></noscript>
 <style>
-  html,body{margin:0;height:100%;background:#F3F4EF;overflow:hidden}
-  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;display:block}
-  .load{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:600 17px Tahoma,sans-serif;color:#3F4842}
-  .load img{width:96px;height:96px}
+  html,body{margin:0;height:100%;background:#F3F4EF}
+  .load{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:600 17px Tahoma,sans-serif;color:#3F4842;text-align:center;padding:20px;box-sizing:border-box}
+  .load img{width:110px;height:110px}
   .load a{color:#34431C}
 </style>
 </head>
 <body>
-<div class="load" id="load">
+<div class="load">
   <img src="logo.png" alt="">
   <div>جارٍ فتح بوصلة المستقبل…</div>
-  <a id="direct" href="#">إذا ما فتح الموقع، اضغط هنا</a>
+  <a id="direct" href="https://script.google.com/macros/s/AKfycbyU4tBXEdUEviiN3N6r9eC2FSRwk33ctH2-3LMoW5fvs22b-DwDqstRj7ziIVeREAgpGA/exec">إذا ما فتح الموقع، اضغط هنا</a>
 </div>
 <script>
-  /* ===== ضع هنا رابط موقعك من Apps Script (اللي ينتهي بـ /exec) ===== */
+  /* ===== رابط موقعك من Apps Script (اللي ينتهي بـ /exec) ===== */
   const SITE = "https://script.google.com/macros/s/AKfycbyU4tBXEdUEviiN3N6r9eC2FSRwk33ctH2-3LMoW5fvs22b-DwDqstRj7ziIVeREAgpGA/exec";
-  /* ================================================================ */
-
-  const q = location.search; // يمرر ?open=book أو ?open=guide&page=… من الكيو آر
-  const url = SITE + (q || "");
+  /* ============================================================ */
+  // Google يمنع عرض مواقع Apps Script داخل صفحات ثانية في بعض المتصفحات، فنفتح الموقع مباشرة.
+  // ?open=book أو ?open=guide&page=… (من الكيو آر) تنتقل معه.
+  const url = SITE + (location.search || "");
   document.getElementById('direct').href = url;
-  const f = document.createElement('iframe');
-  f.src = url;
-  f.title = 'بوصلة المستقبل';
-  f.allow = 'clipboard-write; fullscreen';
-  f.onload = () => document.getElementById('load').remove();
-  document.body.appendChild(f);
+  location.replace(url);
 </script>
 </body>
 </html>
